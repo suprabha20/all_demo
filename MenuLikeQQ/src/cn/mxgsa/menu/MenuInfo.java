@@ -2,12 +2,12 @@ package cn.mxgsa.menu;
 
 public class MenuInfo {
 	/**
-	 * ±êÌâ
+	 * æ ‡é¢˜
 	 */
 	public String title;
 	public int imgsrc;
 	/**
-	 * ÊÇ·ñÒş²Ø
+	 * æ˜¯å¦éšè—
 	 */
 	public boolean ishide;
 	/**

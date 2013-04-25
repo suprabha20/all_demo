@@ -15,68 +15,72 @@ import android.widget.PopupWindow;
 import android.widget.Toast;
 
 public class MenuLikeQQActivity extends Activity {
-	
+
 	/**
-	 * ¶¨Òåpopupwindow
-	 */	
+	 * å®šä¹‰popupwindow
+	 */
 	private PopupWindow popup;
 	/**
-	 * ¶¨ÒåÊÊÅäÆ÷
+	 * å®šä¹‰é€‚é…å™¨
 	 */
 	private MenuAdapter menuAdapter;
-	//²Ëµ¥ÏîÁĞ±í
+	// èœå•é¡¹åˆ—è¡¨
 	private List<MenuInfo> menulists;
-	//¶¨Òågridview
+	// å®šä¹‰gridview
 	private GridView menuGridView;
-	
-	
-    /** Called when the activity is first created. */
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.main);
-        initPopuWindows();
-    }
-    
+
+	/** Called when the activity is first created. */
+	@Override
+	public void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+		setContentView(R.layout.main);
+		initPopuWindows();
+	}
+
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 		// TODO Auto-generated method stub
 		return true;
 	}
-    
+
 	/**
-	 * ÉèÖÃPopupWindows
+	 * è®¾ç½®PopupWindows
 	 */
-    private void initPopuWindows() {
-    	//³õÊ¼»¯gridview
-		menuGridView=(GridView)View.inflate(this, R.layout.gridview_menu, null);
-		//³õÊ¼»¯PopupWindow,LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT¿ØÖÆÏÔÊ¾
-		popup = new PopupWindow(menuGridView, LayoutParams.FILL_PARENT, LayoutParams.WRAP_CONTENT);
-		// ÉèÖÃmenu²Ëµ¥±³¾°
-		popup.setBackgroundDrawable(getResources().getDrawable(R.drawable.menu_background));
-		// menu²Ëµ¥»ñµÃ½¹µã Èç¹ûÃ»ÓĞ»ñµÃ½¹µãmenu²Ëµ¥ÖĞµÄ¿Ø¼şÊÂ¼şÎŞ·¨ÏìÓ¦
+	private void initPopuWindows() {
+		// åˆå§‹åŒ–gridview
+		menuGridView = (GridView) View.inflate(this, R.layout.gridview_menu,
+				null);
+		// åˆå§‹åŒ–PopupWindow,LayoutParams.WRAP_CONTENT,
+		// LayoutParams.WRAP_CONTENTæ§åˆ¶æ˜¾ç¤º
+		popup = new PopupWindow(menuGridView, LayoutParams.FILL_PARENT,
+				LayoutParams.WRAP_CONTENT);
+		// è®¾ç½®menuèœå•èƒŒæ™¯
+		popup.setBackgroundDrawable(getResources().getDrawable(
+				R.drawable.menu_background));
+		// menuèœå•è·å¾—ç„¦ç‚¹ å¦‚æœæ²¡æœ‰è·å¾—ç„¦ç‚¹menuèœå•ä¸­çš„æ§ä»¶äº‹ä»¶æ— æ³•å“åº”
 		popup.setFocusable(true);
-		//ÉèÖÃÏÔÊ¾ºÍÒş²ØµÄ¶¯»­
+		// è®¾ç½®æ˜¾ç¤ºå’Œéšè—çš„åŠ¨ç”»
 		popup.setAnimationStyle(R.style.menushow);
 		popup.update();
-		//ÉèÖÃ´¥Ãş»ñÈ¡½¹µã
+		// è®¾ç½®è§¦æ‘¸è·å–ç„¦ç‚¹
 		menuGridView.setFocusableInTouchMode(true);
-		//ÉèÖÃ¼üÅÌÊÂ¼ş,Èç¹û°´ÏÂ²Ëµ¥¼üÔòÒş²Ø²Ëµ¥
+		// è®¾ç½®é”®ç›˜äº‹ä»¶,å¦‚æœæŒ‰ä¸‹èœå•é”®åˆ™éšè—èœå•
 		menuGridView.setOnKeyListener(new android.view.View.OnKeyListener() {
 			public boolean onKey(View v, int keyCode, KeyEvent event) {
 				// TODO Auto-generated method stub
 				if ((keyCode == KeyEvent.KEYCODE_MENU) && (popup.isShowing())) {
-					popup.dismiss();  
+					popup.dismiss();
 					return true;
-					
+
 				}
 				return false;
 			}
 
 		});
-		//Ìí¼Ó²Ëµ¥°´Å¥ÊÂ¼ş
+		// æ·»åŠ èœå•æŒ‰é’®äº‹ä»¶
 		menuGridView.setOnItemClickListener(new OnItemClickListener() {
-			public void onItemClick(AdapterView<?> arg0, View arg1, int arg2, long arg3) {
+			public void onItemClick(AdapterView<?> arg0, View arg1, int arg2,
+					long arg3) {
 				// TODO Auto-generated method stub
 				MenuInfo mInfo = menulists.get(arg2);
 				popup.dismiss();
@@ -85,13 +89,13 @@ public class MenuLikeQQActivity extends Activity {
 				}
 				switch (mInfo.menuId) {
 				case MenuUtils.MENU_ADD_FRIEND:
-					Toast.makeText(MenuLikeQQActivity.this, "Ìí¼ÓºÃÓÑ", 1).show();
+					Toast.makeText(MenuLikeQQActivity.this, "æ·»åŠ å¥½å‹", 1).show();
 					break;
 				case MenuUtils.MENU_ADD_GROUP:
-					Toast.makeText(MenuLikeQQActivity.this, "Ìí¼Ó·Ö×é", 1).show();
+					Toast.makeText(MenuLikeQQActivity.this, "æ·»åŠ åˆ†ç»„", 1).show();
 					break;
 				case MenuUtils.MENU_EXIT:
-					Toast.makeText(MenuLikeQQActivity.this, "ÍË³öÓ¦ÓÃ", 1).show();
+					Toast.makeText(MenuLikeQQActivity.this, "é€€å‡ºåº”ç”¨", 1).show();
 					break;
 				case MenuUtils.MENU_GROUP_ACCURATE:
 
@@ -100,33 +104,34 @@ public class MenuLikeQQActivity extends Activity {
 
 					break;
 				case MenuUtils.MENU_HELP:
-					Toast.makeText(MenuLikeQQActivity.this, "¼ì²é¸üĞÂ", 1).show();
+					Toast.makeText(MenuLikeQQActivity.this, "æ£€æŸ¥æ›´æ–°", 1).show();
 
 					break;
 				case MenuUtils.MENU_LOGOUT:
-					Toast.makeText(MenuLikeQQActivity.this, "ÇĞ»»ÓÃ»§", 1).show();
+					Toast.makeText(MenuLikeQQActivity.this, "åˆ‡æ¢ç”¨æˆ·", 1).show();
 					break;
 				case MenuUtils.MENU_SERCH_FRIEND:
-					Toast.makeText(MenuLikeQQActivity.this, "ËÑË÷ºÃÓÑ", 1).show();
+					Toast.makeText(MenuLikeQQActivity.this, "æœç´¢å¥½å‹", 1).show();
 					break;
 				case MenuUtils.MENU_SETTING:
-					Toast.makeText(MenuLikeQQActivity.this, "ÉèÖÃ", 1).show();
+					Toast.makeText(MenuLikeQQActivity.this, "è®¾ç½®", 1).show();
 					break;
 				}
 			}
 		});
 	}
-    
-    @Override
+
+	@Override
 	public boolean onMenuOpened(int featureId, Menu menu) {
 		// TODO Auto-generated method stub
 		if (popup != null) {
 			menulists = MenuUtils.getMenuList();
 			menuAdapter = new MenuAdapter(this, menulists);
 			menuGridView.setAdapter(menuAdapter);
-			popup.showAtLocation(this.findViewById(R.id.linearlayout), Gravity.BOTTOM, 0, 0);
+			popup.showAtLocation(this.findViewById(R.id.linearlayout),
+					Gravity.BOTTOM, 0, 0);
 		}
-		return false;// ·µ»ØÎªtrue ÔòÏÔÊ¾ÏµÍ³menu
+		return false;// è¿”å›ä¸ºtrue åˆ™æ˜¾ç¤ºç³»ç»Ÿmenu
 	}
 
 	@Override

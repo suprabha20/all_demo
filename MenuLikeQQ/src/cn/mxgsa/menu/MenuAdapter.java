@@ -15,11 +15,12 @@ public class MenuAdapter extends BaseAdapter {
 
 	private final List<MenuInfo> list;
 	private final LayoutInflater inflater;
-	public MenuAdapter(Context context,List<MenuInfo> list){
-		this.list=list;
-		inflater=LayoutInflater.from(context);
+
+	public MenuAdapter(Context context, List<MenuInfo> list) {
+		this.list = list;
+		inflater = LayoutInflater.from(context);
 	}
-	
+
 	public int getCount() {
 		// TODO Auto-generated method stub
 		return list.size();
@@ -37,17 +38,17 @@ public class MenuAdapter extends BaseAdapter {
 
 	public View getView(int arg0, View arg1, ViewGroup arg2) {
 		// TODO Auto-generated method stub
-		View view=arg1;
-		if (view==null) {
-			view=inflater.inflate(R.layout.menu_item, null);
+		View view = arg1;
+		if (view == null) {
+			view = inflater.inflate(R.layout.menu_item, null);
 		}
-		MenuInfo mInfo=list.get(arg0);
-		ImageView iView=(ImageView)view.findViewById(R.id.item_image);
-		TextView tView=(TextView)view.findViewById(R.id.item_text);
+		MenuInfo mInfo = list.get(arg0);
+		ImageView iView = (ImageView) view.findViewById(R.id.item_image);
+		TextView tView = (TextView) view.findViewById(R.id.item_text);
 		iView.setImageResource(mInfo.imgsrc);
 		tView.setText(mInfo.title);
-		if (mInfo.ishide) {			
-			iView.setAlpha(80);			
+		if (mInfo.ishide) {
+			iView.setAlpha(80);
 		}
 		return view;
 	}

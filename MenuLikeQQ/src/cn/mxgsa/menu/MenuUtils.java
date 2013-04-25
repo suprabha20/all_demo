@@ -22,23 +22,23 @@ public class MenuUtils {
 	
 	private static List<MenuInfo> initMenu(){
 		List<MenuInfo> list=new ArrayList<MenuInfo>();
-		list.add(new MenuInfo(MENU_SETTING,"ÉèÖÃ",R.drawable.menu_ic_setting,false));
-		list.add(new MenuInfo(MENU_LOGOUT,"ÇĞ»»ÓÃ»§",R.drawable.menu_ic_logout,false));
-		list.add(new MenuInfo(MENU_HELP,"¼ì²é¸üĞÂ",R.drawable.menu_ic_help,false));
-		list.add(new MenuInfo(MENU_EXIT,"ÍË³öÓ¦ÓÃ",R.drawable.menu_ic_exit,false));
+		list.add(new MenuInfo(MENU_SETTING,"è®¾ç½®",R.drawable.menu_ic_setting,false));
+		list.add(new MenuInfo(MENU_LOGOUT,"åˆ‡æ¢ç”¨æˆ·",R.drawable.menu_ic_logout,false));
+		list.add(new MenuInfo(MENU_HELP,"æ£€æŸ¥æ›´æ–°",R.drawable.menu_ic_help,false));
+		list.add(new MenuInfo(MENU_EXIT,"é€€å‡ºåº”ç”¨",R.drawable.menu_ic_exit,false));
 		return list;
 	}
 	
 	/**
-	 * »ñÈ¡µ±Ç°²Ëµ¥ÁĞ±í
+	 * è·å–å½“å‰èœå•åˆ—è¡¨
 	 * @return
 	 */
 	public static List<MenuInfo> getMenuList(){
 		List<MenuInfo> list=initMenu();		
-			list.add(0,new MenuInfo(MENU_SERCH_FRIEND,"ËÑË÷ºÃÓÑ",R.drawable.menu_ic_search_friend,false));
-			list.add(0,new MenuInfo(MENU_ADD_GROUP,"Ìí¼Ó·Ö×é",R.drawable.menu_ic_addgroup,false));
-			list.add(0,new MenuInfo(MENU_ADD_FRIEND,"Ìí¼ÓºÃÓÑ",R.drawable.menu_ic_addfriend,false));
-			list.add(0,new MenuInfo(MENU_SERCH_FRIEND,"ËÑË÷ºÃÓÑ",R.drawable.menu_ic_search_friend,false));
+			list.add(0,new MenuInfo(MENU_SERCH_FRIEND,"æœç´¢å¥½å‹",R.drawable.menu_ic_search_friend,false));
+			list.add(0,new MenuInfo(MENU_ADD_GROUP,"æ·»åŠ åˆ†ç»„",R.drawable.menu_ic_addgroup,false));
+			list.add(0,new MenuInfo(MENU_ADD_FRIEND,"æ·»åŠ å¥½å‹",R.drawable.menu_ic_addfriend,false));
+			list.add(0,new MenuInfo(MENU_SERCH_FRIEND,"æœç´¢å¥½å‹",R.drawable.menu_ic_search_friend,false));
 		
 			
 		return list;
