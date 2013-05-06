@@ -22,10 +22,10 @@ public class BetweenActivityAnimationDemoActivity3 extends Activity implements O
 		if(v.getId() == R.id.button3)
 		{
 			finish();
-			//Èç¹ûÕâ¸öµØ·½²»ÏëÓÃ×Ô¼ºµÄ£¬¿ÉÒÔÖ±½Óµ÷°²×¿Ìá¹©µÄ¶¯»­£¬ÈçÏÂ£º
+			//å¦‚æœè¿™ä¸ªåœ°æ–¹ä¸æƒ³ç”¨è‡ªå·±çš„ï¼Œå¯ä»¥ç›´æ¥è°ƒå®‰å“æä¾›çš„åŠ¨ç”»ï¼Œå¦‚ä¸‹ï¼š
 			overridePendingTransition(R.anim.push_left_in, R.anim.push_left_out);
 			
-			//°²×¿×Ô´øµÄ¶¯»­Å¶£¬¿´Ğ§¹û¾ÍÖªµÀÁË
+			//å®‰å“è‡ªå¸¦çš„åŠ¨ç”»å“¦ï¼Œçœ‹æ•ˆæœå°±çŸ¥é“äº†
 			//overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
 			
 		}

@@ -6,13 +6,12 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
 
-/**  
-* @Title: BetweenActivityAnimationDemoActivity.java
-* @Package com.xiaoma.betweenactivityanimation
-* @Description: ActivityÖ®¼äÌø×ª¶¯»­Ñ§Ï°  Èç¹ûÅÂ¶¯»­Ì«¶Ì¿´²»Çå³şµÄ£¬
-* ¿ÉÒÔ°Ñ¶¯»­XMLÎÄ¼şÀïÃæ±êÇ©ÊôĞÔ duringÖµÉèÖÃµÄ³¤Ğ©£¬ºğºğ
-* @author XiaoMa
-*/
+/**
+ * @Title: BetweenActivityAnimationDemoActivity.java
+ * @Package com.xiaoma.betweenactivityanimation
+ * @Description: Activityä¹‹é—´è·³è½¬åŠ¨ç”»å­¦ä¹  å¦‚æœæ€•åŠ¨ç”»å¤ªçŸ­çœ‹ä¸æ¸…æ¥šçš„ï¼Œ å¯ä»¥æŠŠåŠ¨ç”»XMLæ–‡ä»¶é‡Œé¢æ ‡ç­¾å±æ€§ duringå€¼è®¾ç½®çš„é•¿äº›ï¼Œå¼å¼
+ * @author XiaoMa
+ */
 public class BetweenActivityAnimationDemoActivity extends Activity implements
 		OnClickListener {
 	/** Called when the activity is first created. */
@@ -33,41 +32,42 @@ public class BetweenActivityAnimationDemoActivity extends Activity implements
 			Intent intent = new Intent(getApplicationContext(),
 					BetweenActivityAnimationDemoActivity2.class);
 			startActivity(intent);
-			
+
 			/**
-			 * ¶ÔÏÂÃæÕâ¸ö·½·¨µÄ¹Ù·½½âÊÍÈçÏÂ£¬°æ±¾´Ó2.0ºó¿ªÊ¼Å¶
-			 * Call immediately after one of the flavors of startActivity(Intent) or finish() 
-			 * to specify an explicit transition animation to perform next.
-			 * ÓÃ¹¤¾ß²éµ½½âÊÍÎª£º
-			 *   ÔÚstartActivity(Intent)»òfinish()Ö®·¨Ö®ºóµ÷ÓÃºó£¬»áÁ¢¼´ÓÃÒ»¸öÖ¸¶¨µÄÃèÊö¶¯»­µÄXMLÎÄ¼şÀ´Ö´ĞĞ
-			 *   ÏÂÒ»¸öActivity 
+			 * å¯¹ä¸‹é¢è¿™ä¸ªæ–¹æ³•çš„å®˜æ–¹è§£é‡Šå¦‚ä¸‹ï¼Œç‰ˆæœ¬ä»2.0åå¼€å§‹å“¦ Call immediately after one of the
+			 * flavors of startActivity(Intent) or finish() to specify an
+			 * explicit transition animation to perform next. ç”¨å·¥å…·æŸ¥åˆ°è§£é‡Šä¸ºï¼š
+			 * åœ¨startActivity(Intent)æˆ–finish()ä¹‹æ³•ä¹‹åè°ƒç”¨åï¼Œä¼šç«‹å³ç”¨ä¸€ä¸ªæŒ‡å®šçš„æè¿°åŠ¨ç”»çš„XMLæ–‡ä»¶æ¥æ‰§è¡Œ
+			 * ä¸‹ä¸€ä¸ªActivity
 			 * 
-			 * ÏÂÃæÁ½¾äÊÇ¶ÔÕâ¸ö·½·¨Á½¸ö²ÎÊıµÄ½âÊÍ,ÔÚ´ËÖ®Ç°Ğ¡ÂíÒ²¿´ÁËÏÂ±ğÈË½²µÄ£¬
-			 * ÆäÊµÊÇ´íµÄ£¬¿´¹Ù·½µÄ½âÊÍ¿Ï¶¨Ã»´í£¬²»¶®Ó¢ÓïµÄÓÃ¹¤¾ß²éÏÂ
-			 * Ğ¡ÂíÒ»Ö±¶¼ËµµÄ£¬ÎÒÓ¢ÓïºÜÀÃ£¬ÎÒÄÜ²éµÄÄãÒ»¶¨Ò²ÄÜ²éµÃµ½
-			 * 1.enterAnim	A resource ID of the animation resource 
-			 *              to use for the incoming activity. Use 0 for no animation.
-			 * 2.exitAnim	A resource ID of the animation resource 
-			 *              to use for the outgoing activity. Use 0 for no animation.
-			 * Ò»£º½øÈë¶¯»­  Ò»¸ö¶¯»­×ÊÔ´£¬ÓÃÓÚÄ¿±êActivity ½øÈëÆÁÄ»Ê±µÄ¶¯»­£¬´Ë´¦Ğ´0´ú±íÎŞ¶¯»­
-			 * ¶ş£ºÍË³ö¶¯»­  Ò»¸ö¶¯»­×ÊÔ´£¬ÓÃÓÚµ±Ç°Activity ÍË³öÆÁÄ»Ê±µÄ¶¯»­£¬´Ë´¦Ğ´0´ú±íÎŞ¶¯»­
+			 * ä¸‹é¢ä¸¤å¥æ˜¯å¯¹è¿™ä¸ªæ–¹æ³•ä¸¤ä¸ªå‚æ•°çš„è§£é‡Š,åœ¨æ­¤ä¹‹å‰å°é©¬ä¹Ÿçœ‹äº†ä¸‹åˆ«äººè®²çš„ï¼Œ å…¶å®æ˜¯é”™çš„ï¼Œçœ‹å®˜æ–¹çš„è§£é‡Šè‚¯å®šæ²¡é”™ï¼Œä¸æ‡‚è‹±è¯­çš„ç”¨å·¥å…·æŸ¥ä¸‹
+			 * å°é©¬ä¸€ç›´éƒ½è¯´çš„ï¼Œæˆ‘è‹±è¯­å¾ˆçƒ‚ï¼Œæˆ‘èƒ½æŸ¥çš„ä½ ä¸€å®šä¹Ÿèƒ½æŸ¥å¾—åˆ° 1.enterAnim A resource ID of the
+			 * animation resource to use for the incoming activity. Use 0 for no
+			 * animation. 2.exitAnim A resource ID of the animation resource to
+			 * use for the outgoing activity. Use 0 for no animation. ä¸€ï¼šè¿›å…¥åŠ¨ç”»
+			 * ä¸€ä¸ªåŠ¨ç”»èµ„æºï¼Œç”¨äºç›®æ ‡Activity è¿›å…¥å±å¹•æ—¶çš„åŠ¨ç”»ï¼Œæ­¤å¤„å†™0ä»£è¡¨æ— åŠ¨ç”» äºŒï¼šé€€å‡ºåŠ¨ç”» ä¸€ä¸ªåŠ¨ç”»èµ„æºï¼Œç”¨äºå½“å‰Activity
+			 * é€€å‡ºå±å¹•æ—¶çš„åŠ¨ç”»ï¼Œæ­¤å¤„å†™0ä»£è¡¨æ— åŠ¨ç”»
 			 * 
-			 * Õâ¸öÄ¿±ê¡¢µ±Ç°ÔõÃ´Àí½â£¿±ÈÈç£ºstartActivity( A£¨µ±Ç°£©--> B£¨Ä¿±ê£©) ¡¶finish()Ò»Ñù¡·
-			 * ÏÂÃæ²ÎÊıÖĞÓĞÒ»¸öÎª0£¬¾Í±íÊ¾AÍË³öÊ±ÎŞ¶¯»­...Ò»¶¨°Ñ²ÎÊı¸ãÇå³ş£¬²»È»¶¯»­¾Í¸ãÔÎÁË
-			 * overridePendingTransition(R.anim.zoom_enter, 0);  
-			 * ·½·¨Á½¸ö²ÎÊıÓëÄ¿±ê¡¢µ±Ç°Activity¶ÔÓ¦¹ØÏµÈçĞ§¹ûÏÂ·½ÂÌÉ«Í¼ËùÊ¾
+			 * è¿™ä¸ªç›®æ ‡ã€å½“å‰æ€ä¹ˆç†è§£ï¼Ÿæ¯”å¦‚ï¼šstartActivity( Aï¼ˆå½“å‰ï¼‰--> Bï¼ˆç›®æ ‡ï¼‰) ã€Šfinish()ä¸€æ ·ã€‹
+			 * ä¸‹é¢å‚æ•°ä¸­æœ‰ä¸€ä¸ªä¸º0ï¼Œå°±è¡¨ç¤ºAé€€å‡ºæ—¶æ— åŠ¨ç”»...ä¸€å®šæŠŠå‚æ•°ææ¸…æ¥šï¼Œä¸ç„¶åŠ¨ç”»å°±ææ™•äº†
+			 * overridePendingTransition(R.anim.zoom_enter, 0);
+			 * æ–¹æ³•ä¸¤ä¸ªå‚æ•°ä¸ç›®æ ‡ã€å½“å‰Activityå¯¹åº”å…³ç³»å¦‚æ•ˆæœä¸‹æ–¹ç»¿è‰²å›¾æ‰€ç¤º
 			 */
 			overridePendingTransition(R.anim.zoom_enter, R.anim.zoom_exit);
 		}
 	}
-	
-	/** ÁĞ¼¸¸ö°²×¿×Ô´øµÄ¶¯»­Ğ§¹û£¬´ó¼Ò¿ÉÒÔ°ÑÉÏÃæ overridePendingTransition²ÎÊı¸ÄÏÂ¿´¿´Ğ§¹û
-	 *  ÊµÏÖµ­Èëµ­³öµÄĞ§¹û
-		overridePendingTransition(android.R.anim.fade_in,android.R.anim.fade_out);    
-		overridePendingTransition(android.R.anim.fade_in,android.R.anim.fade_out);
-		 
-		ÓÉ×óÏòÓÒ»¬ÈëµÄĞ§¹û
-		overridePendingTransition(android.R.anim.slide_in_left,android.R.anim.slide_out_right);    
-		overridePendingTransition(android.R.anim.slide_in_left,android.R.anim.slide_out_right);
+
+	/**
+	 * åˆ—å‡ ä¸ªå®‰å“è‡ªå¸¦çš„åŠ¨ç”»æ•ˆæœï¼Œå¤§å®¶å¯ä»¥æŠŠä¸Šé¢ overridePendingTransitionå‚æ•°æ”¹ä¸‹çœ‹çœ‹æ•ˆæœ å®ç°æ·¡å…¥æ·¡å‡ºçš„æ•ˆæœ
+	 * overridePendingTransition
+	 * (android.R.anim.fade_in,android.R.anim.fade_out);
+	 * overridePendingTransition
+	 * (android.R.anim.fade_in,android.R.anim.fade_out);
+	 * 
+	 * ç”±å·¦å‘å³æ»‘å…¥çš„æ•ˆæœ
+	 * overridePendingTransition(android.R.anim.slide_in_left,android.R
+	 * .anim.slide_out_right);
+	 * overridePendingTransition(android.R.anim.slide_in_left
+	 * ,android.R.anim.slide_out_right);
 	 */
 }
