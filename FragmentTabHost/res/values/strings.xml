@@ -1,0 +1,14 @@
+<resources>
+
+    <string name="app_name">MostMood</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="menu_settings">Settings</string>
+    <string name="title_activity_main">MostMood</string>
+    <string name="buttom_home">首页</string>
+    <string name="buttom_wall">心情墙</string>
+    <string name="buttom_camera">拍照</string>
+    <string name="buttom_message">信息</string>
+    <string name="buttom_me">我的</string>
+    <string name="choose_text">选择</string>
+
+</resources>

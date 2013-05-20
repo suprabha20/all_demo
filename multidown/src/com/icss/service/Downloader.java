@@ -92,6 +92,7 @@ public class Downloader {
 			connection.setConnectTimeout(5000);
 			connection.setRequestMethod("GET");
 			fileSize = connection.getContentLength();
+			Log.v("FILESIZE", " " + fileSize);
 			File file = new File(localfile);
 			if (!file.exists()) {
 				file.createNewFile();
