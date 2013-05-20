@@ -32,6 +32,7 @@ public class WelcomeActivity extends Activity {
         Animation logo_animation = AnimationUtils.loadAnimation(WelcomeActivity.this, 
         		R.anim.push_left_in);
         logo.setAnimation(logo_animation);
+        
         logo_animation.setAnimationListener(new AnimationListener() {
 			
 			@Override
