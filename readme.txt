@@ -7,4 +7,6 @@ dialog_demo   弹出窗口,背景变暗.
 FragmentTabHost   选项卡菜单 
 =======
 socket_client  简单的socket例子。
+-----------------------------------------
+QQDemo_viewpager_fragment  ViewPager+Fragment实现QQ界面
 
