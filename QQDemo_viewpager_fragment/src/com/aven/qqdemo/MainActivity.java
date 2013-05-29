@@ -31,7 +31,7 @@ public class MainActivity extends FragmentActivity {
 	private static final String TAG = "MainActivity";
 	private ViewPager mPager;// 页卡内容
 	private ArrayList<Fragment> fragmentsList;// Tab页面列表
-	private ImageView ivBottomLine;// 动画图片
+	private ImageView ivBottomLine;// 下划线
 	private TextView tvTabActivity, tvTabGroups, tvTabFriends, tvTabChat;
 
 	private int currIndex = 0;// 当前页卡编号
@@ -89,13 +89,13 @@ public class MainActivity extends FragmentActivity {
 
 	private void InitWidth() {
 		ivBottomLine = (ImageView) findViewById(R.id.iv_bottom_line);
-		// 滚动条的长度
+		// 滚动条的长度,已经确定.
 		bottomLineWidth = ivBottomLine.getLayoutParams().width;
 		Log.d(TAG, "cursor imageview width=" + bottomLineWidth);
 		DisplayMetrics dm = new DisplayMetrics();
 		getWindowManager().getDefaultDisplay().getMetrics(dm);
 		int screenW = dm.widthPixels;
-		// offset滚动条间隔长度
+		// offset滚动条间隔长度,根据全部长度和滚动条的长度,项目个数计算出来
 		offset = (int) ((screenW / 4.0 - bottomLineWidth) / 2);
 		Log.i("MainActivity", "offset=" + offset);
 
@@ -119,6 +119,7 @@ public class MainActivity extends FragmentActivity {
 		}
 	};
 
+	// 页面切换监听
 	public class MyOnPageChangeListener implements OnPageChangeListener {
 
 		@Override
@@ -126,6 +127,7 @@ public class MainActivity extends FragmentActivity {
 			Animation animation = null;
 			switch (arg0) {
 			case 0:
+				// currIndex当前页面所在索引
 				if (currIndex == 1) {
 					animation = new TranslateAnimation(position_one, 0, 0, 0);
 					tvTabGroups.setTextColor(resources
@@ -143,6 +145,7 @@ public class MainActivity extends FragmentActivity {
 				break;
 			case 1:
 				if (currIndex == 0) {
+					// 从索引0滑到索引1
 					animation = new TranslateAnimation(offset, position_one, 0,
 							0);
 					tvTabActivity.setTextColor(resources
@@ -158,6 +161,7 @@ public class MainActivity extends FragmentActivity {
 					tvTabChat.setTextColor(resources
 							.getColor(R.color.lightwhite));
 				}
+				// 设回原来的颜色
 				tvTabGroups.setTextColor(resources.getColor(R.color.white));
 				break;
 			case 2:

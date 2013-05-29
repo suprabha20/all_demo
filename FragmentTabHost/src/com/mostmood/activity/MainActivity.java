@@ -33,7 +33,7 @@ import android.support.v4.app.FragmentActivity;
 public class MainActivity extends FragmentActivity {
 
 	TabHost tabHost;
-	TabWidget tabWidget;
+	// TabWidget tabWidget;
 	LinearLayout bottom_layout;
 	int CURRENT_TAB = 0; // 设置常量
 	Home_Fragment homeFragment;
@@ -82,7 +82,7 @@ public class MainActivity extends FragmentActivity {
 					ft.detach(meFragment);
 
 				/** 如果当前选项卡是home */
-				if (tabId.equalsIgnoreCase("ahome")) {
+				if (tabId.equalsIgnoreCase("home")) {
 					isTabHome();
 					CURRENT_TAB = 1;
 
@@ -176,42 +176,47 @@ public class MainActivity extends FragmentActivity {
 	public void findTabView() {
 
 		tabHost = (TabHost) findViewById(android.R.id.tabhost);
-		tabWidget = (TabWidget) findViewById(android.R.id.tabs);
+		// tabWidget = (TabWidget) findViewById(android.R.id.tabs);//这个可以不要.
 		LinearLayout layout = (LinearLayout) tabHost.getChildAt(0);
 		TabWidget tw = (TabWidget) layout.getChildAt(1);
 
 		tabIndicator1 = (RelativeLayout) LayoutInflater.from(this).inflate(
 				R.layout.tab_indicator, tw, false);
-		TextView tvTab1 = (TextView) tabIndicator1.getChildAt(1);
 		ImageView ivTab1 = (ImageView) tabIndicator1.getChildAt(0);
+		TextView tvTab1 = (TextView) tabIndicator1.getChildAt(1);
+
 		ivTab1.setBackgroundResource(R.drawable.selector_mood_home);
 		tvTab1.setText(R.string.buttom_home);
 
 		tabIndicator2 = (RelativeLayout) LayoutInflater.from(this).inflate(
 				R.layout.tab_indicator, tw, false);
-		TextView tvTab2 = (TextView) tabIndicator2.getChildAt(1);
 		ImageView ivTab2 = (ImageView) tabIndicator2.getChildAt(0);
+		TextView tvTab2 = (TextView) tabIndicator2.getChildAt(1);
+
 		ivTab2.setBackgroundResource(R.drawable.selector_mood_wall);
 		tvTab2.setText(R.string.buttom_wall);
 
 		tabIndicator3 = (RelativeLayout) LayoutInflater.from(this).inflate(
 				R.layout.tab_indicator_camera, tw, false);
-		TextView tvTab3 = (TextView) tabIndicator3.getChildAt(1);
 		ImageView ivTab3 = (ImageView) tabIndicator3.getChildAt(0);
+		TextView tvTab3 = (TextView) tabIndicator3.getChildAt(1);
+
 		ivTab3.setBackgroundResource(R.drawable.selector_mood_photograph);
 		tvTab3.setText(R.string.buttom_camera);
 
 		tabIndicator4 = (RelativeLayout) LayoutInflater.from(this).inflate(
 				R.layout.tab_indicator, tw, false);
-		TextView tvTab4 = (TextView) tabIndicator4.getChildAt(1);
 		ImageView ivTab4 = (ImageView) tabIndicator4.getChildAt(0);
+		TextView tvTab4 = (TextView) tabIndicator4.getChildAt(1);
+
 		ivTab4.setBackgroundResource(R.drawable.selector_mood_message);
 		tvTab4.setText(R.string.buttom_message);
 
 		tabIndicator5 = (RelativeLayout) LayoutInflater.from(this).inflate(
 				R.layout.tab_indicator, tw, false);
-		TextView tvTab5 = (TextView) tabIndicator5.getChildAt(1);
+
 		ImageView ivTab5 = (ImageView) tabIndicator5.getChildAt(0);
+		TextView tvTab5 = (TextView) tabIndicator5.getChildAt(1);
 		ivTab5.setBackgroundResource(R.drawable.selector_mood_my_wall);
 		tvTab5.setText(R.string.buttom_me);
 	}
