@@ -10,3 +10,4 @@ socket_client  简单的socket例子。
 -----------------------------------------
 QQDemo_viewpager_fragment  ViewPager+Fragment实现QQ界面
 
+databaseToSdcard      SQLite数据库存储到SDCARD上。

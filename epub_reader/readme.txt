@@ -1,0 +1,2 @@
+将EoeReader这个文件夹放在手机sd卡目录下
+再将EoeEpubReader源码直接导入eclipse中运行即可
